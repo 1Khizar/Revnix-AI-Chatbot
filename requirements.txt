@@ -1,0 +1,16 @@
+langchain
+langchain-groq
+langchain-pinecone
+pinecone-client
+langchain-community
+pypdf
+cohere
+langchain-cohere
+python-dotenv
+tiktoken
+langchain-huggingface
+sentence-transformers
+tavily
+fastapi
+uvicorn[standard]
+pydantic
