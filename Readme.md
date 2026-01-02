@@ -55,7 +55,6 @@ A production-ready Retrieval-Augmented Generation (RAG) chatbot built with LangC
 - Pinecone account and API key
 - Groq API key
 - Cohere API key (optional)
-- 2GB+ RAM recommended
 
 ## 🚀 Installation
 
@@ -246,65 +245,6 @@ Change number of retrieved documents in `vector_store.py`:
 def get_retriever(vector_store, k=3):  # k = number of chunks
 ```
 
-## 🧪 Testing
-
-Test the API with curl:
-
-```bash
-# Health check
-curl http://localhost:8000/api/health
-
-# Send a question
-curl -X POST http://localhost:8000/api/chat \
-  -H "Content-Type: application/json" \
-  -d '{"question": "What is TOON format?"}'
-```
-
-## 🐛 Troubleshooting
-
-### Issue: Vector store is empty
-
-**Solution**: Run the scraper first, then restart the application:
-
-```bash
-python scraper.py
-python main.py
-```
-
-### Issue: Pinecone index dimension mismatch
-
-**Solution**: Delete the index from Pinecone dashboard and restart the app.
-
-### Issue: Import errors
-
-**Solution**: Ensure all dependencies are installed:
-
-```bash
-pip install -r requirements.txt --upgrade
-```
-
-### Issue: API key errors
-
-**Solution**: Verify your `.env` file has all required keys:
-
-```bash
-cat .env  # On macOS/Linux
-type .env  # On Windows
-```
-
-## 📊 Performance
-
-- **Response Time**: 2-5 seconds (depending on query complexity)
-- **Accuracy**: High context relevance with vector search
-- **Scalability**: Handles thousands of documents
-- **Vector Store**: Sub-second retrieval times
-
-## 🔐 Security
-
-- API keys stored in `.env` file (never commit to Git)
-- CORS configured for specific origins
-- Input validation on all endpoints
-- Rate limiting recommended for production
 
 ## 🚀 Deployment
 
